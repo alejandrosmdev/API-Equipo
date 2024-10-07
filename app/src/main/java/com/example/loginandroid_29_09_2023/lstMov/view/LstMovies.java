@@ -37,7 +37,7 @@ public class LstMovies extends AppCompatActivity
         lstMoviesPresenter.lstMovies("");
 
     }
-    @SuppressLint("NonConstantResourceId")
+    /*@SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -52,7 +52,7 @@ public class LstMovies extends AppCompatActivity
                 throw new IllegalStateException("Unexpected value: " + item.getItemId());
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
 
     @Override
