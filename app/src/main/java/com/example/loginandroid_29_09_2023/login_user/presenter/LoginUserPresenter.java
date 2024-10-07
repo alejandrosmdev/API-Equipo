@@ -6,6 +6,8 @@ import com.example.loginandroid_29_09_2023.login_user.model.LoginUserModel;
 
 public class LoginUserPresenter implements ContractLoginUser.Presenter, ContractLoginUser.Model.OnLoginUserListener {
 
+    // Comunica la información con la vista. Vista-Modelo
+
     private ContractLoginUser.View view;
     private ContractLoginUser.Model model;
 

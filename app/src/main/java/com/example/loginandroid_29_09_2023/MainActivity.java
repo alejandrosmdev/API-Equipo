@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Button;
 
 import com.example.loginandroid_29_09_2023.lstMov.view.LstMovies;
 
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         setTheme(R.style.SplashScreen);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
