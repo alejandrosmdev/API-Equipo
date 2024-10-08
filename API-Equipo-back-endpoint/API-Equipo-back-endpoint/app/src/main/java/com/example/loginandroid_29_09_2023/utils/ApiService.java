@@ -26,7 +26,7 @@ public interface ApiService {
 
   // Método para actualizar datos de usuario
   @POST("MyServlet")
-  Call<MyData> updateUser(@Body User user); // Por ahora nada 
+  Call<MyData> updateUser(@Body User user); // Por ahora nada
 
   // Método para listar películas
   @GET("MyServlet")
