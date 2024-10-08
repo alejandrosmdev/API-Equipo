@@ -18,11 +18,11 @@ public interface ContractUpdateMovie {
         // MVP - MVVM
     }
     public interface Model{
-        interface OnLoginUserListener{
+        interface OnUpdateMovieListener{
             void onFinished(Pelicula pelicula);
             void onFailure(String err);
         }
         void updateAPI(Pelicula pelicula,
-                      OnLoginUserListener onLoginUserListener);
+                      OnUpdateMovieListener onUpdateMovieListener);
     }
 }
