@@ -13,36 +13,34 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LstMoviesModel implements ContractListMovies.Model {
-    private static final String IP_BASE = "10.0.0.2:8080";
+
     private LstMoviesPresenter presenter;
 
-    public LstMoviesModel(LstMoviesPresenter presenter){
+    public LstMoviesModel(LstMoviesPresenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void moviesAPI(String filtro,
-                          OnLstMoviesListener respuestaMovies) {
-        /*ApiService apiService = RetrofitCliente.getClient("http://" + IP_BASE + "/untitled/").
-                create(ApiService.class);*/
-        ApiService apiService = RetrofitCliente.getClient(ApiService.URL).
-                create(ApiService.class);
+    public void moviesAPI(String filtro, final OnLstMoviesListener respuestaMovies) {
+        ApiService apiService = RetrofitCliente.getClient(ApiService.URL).create(ApiService.class);
 
-        Call<DataMovies> call = apiService.getDataMovies ("MOVIE.LST_PELICULA");
+        Call<DataMovies> call = apiService.getDataMovies("MOVIE.LST_PELICULA");
         call.enqueue(new Callback<DataMovies>() {
             @Override
             public void onResponse(Call<DataMovies> call, Response<DataMovies> response) {
                 if (response.isSuccessful()) {
                     DataMovies myData = response.body();
                     respuestaMovies.onFinished(myData.getLstPeliculas());
+                } else {
+                    respuestaMovies.onFailure("Error en la respuesta de la API");
                 }
             }
 
             @Override
             public void onFailure(Call<DataMovies> call, Throwable t) {
                 Log.d("error", t.getMessage());
+                respuestaMovies.onFailure(t.getMessage());
             }
         });
     }
 }
-

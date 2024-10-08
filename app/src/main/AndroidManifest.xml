@@ -30,6 +30,9 @@
         <activity
             android:name=".lstMov.view.LstMovies"
             android:exported="false" />
+        <activity android:name=".MoviesActivity"></activity>
+        <activity android:name=".MovieListActivity"></activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
