@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 
 const myPool = new Pool({
     user: "postgres",
-    host: "database-1.c4ps7rsoggws.us-east-1.rds.amazonaws.com",
+    host: xxxxxxxxxxxxxxxxxxxxxx",
     database: "postgres",
-    password: "#gUaBD$C3ICI",
+    password: "xxxxxxxxxxx",
     port: 5432,
     ssl: {
         rejectUnauthorized: false,
